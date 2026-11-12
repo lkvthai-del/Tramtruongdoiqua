@@ -1,0 +1,8 @@
+{
+  "name": "Green Corner - Trạm Đổi Rác Lấy Quà Xanh (THCS Vĩnh Long)",
+  "description": "Trợ lý Trạm Trưởng Ảo AI cho dự án khởi nghiệp học đường Green Corner tại THCS Vĩnh Long: tính điểm thu gom giấy, nhựa, lon nhôm, quy đổi quà xanh và xuất dữ liệu chuẩn Google Sheets.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

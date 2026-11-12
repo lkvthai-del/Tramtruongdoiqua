@@ -1,0 +1,145 @@
+import { GiftItem, WasteRate, WasteSubmission } from './types';
+
+export const WASTE_RATES: Record<string, WasteRate> = {
+  paper: {
+    id: 'paper',
+    name: 'Giấy vụn',
+    unit: 'kg',
+    pointsPerKg: 10,
+    description: 'Sách cũ không dùng được, báo cũ, thùng bìa carton, tài liệu đã photo.',
+    examples: 'Sách giáo khoa cũ rách, tập vở học sinh đã viết hết, thùng carton gói hàng',
+    color: 'text-amber-700',
+    bgColor: 'bg-amber-50',
+    borderColor: 'border-amber-200',
+    iconName: 'FileText',
+  },
+  plastic: {
+    id: 'plastic',
+    name: 'Chai nhựa',
+    unit: 'kg',
+    pointsPerKg: 15,
+    description: 'Chai PET đựng nước suối, trà sữa, nước ngọt, can nhựa sạch.',
+    examples: 'Vỏ chai Lavie, Aquafina, ly/chai trà sữa đã rửa sạch, chai dầu ăn đã súc',
+    color: 'text-sky-700',
+    bgColor: 'bg-sky-50',
+    borderColor: 'border-sky-200',
+    iconName: 'Wine',
+  },
+  aluminum: {
+    id: 'aluminum',
+    name: 'Vỏ lon nhôm',
+    unit: 'kg',
+    pointsPerKg: 30,
+    description: 'Vỏ lon nước ngọt, lon bia, lon soda (dễ dàng tái chế vô hạn lần).',
+    examples: 'Lon Coca-Cola, lon Pepsi, lon Redbull, lon nước yến (đã giẫm bẹp)',
+    color: 'text-emerald-700',
+    bgColor: 'bg-emerald-50',
+    borderColor: 'border-emerald-200',
+    iconName: 'Box',
+  },
+};
+
+export const GIFTS_CATALOG: GiftItem[] = [
+  {
+    id: 'pencil',
+    name: 'Bút chì sinh học',
+    pointsRequired: 50,
+    image: '🌱✏️',
+    badge: 'Mầm cây xanh',
+    description: 'Bút chì thân thiện môi trường, đuôi bút chứa viên nén hạt giống hoa/rau thơm. Khi dùng hết có thể cắm xuống đất để nảy mầm cây con!',
+    ecoBenefit: '100% phân hủy sinh học, ươm mầm sự sống xanh trong trường học.',
+  },
+  {
+    id: 'succulent',
+    name: 'Cây sen đá mini',
+    pointsRequired: 100,
+    image: '🪴✨',
+    badge: 'Thanh lọc không khí',
+    description: 'Chậu sen đá để bàn học nhỏ nhắn, dễ chăm sóc, giúp giải tỏa căng thẳng sau giờ học và trang trí góc học tập xinh xắn.',
+    ecoBenefit: 'Gợi nhắc tinh thần bảo vệ thiên nhiên mỗi ngày nơi bàn học.',
+  },
+  {
+    id: 'notebook',
+    name: 'Cuốn sổ tay giấy tái chế',
+    pointsRequired: 200,
+    image: '📓🌿',
+    badge: 'Tái chế 100%',
+    description: 'Sổ tay bìa kraft cao cấp ép từ vỏ hộp giấy tái chế, ruột giấy ngà chống lóa mắt, bảo vệ thị lực cho học sinh THCS.',
+    ecoBenefit: 'Tiết kiệm 3.5kg gỗ nguyên sinh và 50 lít nước so với giấy thông thường.',
+  },
+];
+
+export const INITIAL_SUBMISSIONS: WasteSubmission[] = [
+  {
+    id: 'gc-001',
+    timestamp: '2026-10-02 08:15',
+    studentName: 'Nguyễn Văn A',
+    studentClass: '7/2',
+    paperKg: 2,
+    plasticKg: 1.5,
+    aluminumKg: 0,
+    paperPoints: 20,
+    plasticPoints: 22.5,
+    aluminumPoints: 0,
+    totalPoints: 43,
+    csvLine: 'Nguyễn Văn A, 7/2, 2, 1.5, 0, 43',
+    note: 'Thu gom giờ ra chơi',
+  },
+  {
+    id: 'gc-002',
+    timestamp: '2026-10-02 09:30',
+    studentName: 'Trần Thị Mai',
+    studentClass: '8/1',
+    paperKg: 4.5,
+    plasticKg: 0,
+    aluminumKg: 1.2,
+    paperPoints: 45,
+    plasticPoints: 0,
+    aluminumPoints: 36,
+    totalPoints: 81,
+    csvLine: 'Trần Thị Mai, 8/1, 4.5, 0, 1.2, 81',
+    redeemedGift: 'Bút chì sinh học (50đ)',
+    pointsRemaining: 31,
+    note: 'Đã đổi 1 Bút chì sinh học',
+  },
+  {
+    id: 'gc-003',
+    timestamp: '2026-10-02 10:15',
+    studentName: 'Lê Hoàng Khôi',
+    studentClass: '9/3',
+    paperKg: 8,
+    plasticKg: 4,
+    aluminumKg: 2.5,
+    paperPoints: 80,
+    plasticPoints: 60,
+    aluminumPoints: 75,
+    totalPoints: 215,
+    csvLine: 'Lê Hoàng Khôi, 9/3, 8, 4, 2.5, 215',
+    redeemedGift: 'Sổ tay làm từ giấy tái chế (200đ)',
+    pointsRemaining: 15,
+    note: 'Dự án khởi nghiệp xanh học đường',
+  },
+];
+
+export const QUICK_PROMPTS = [
+  'Bạn Nguyễn Văn A lớp 7/2 nộp 2kg giấy vụn và 1.5kg chai nhựa.',
+  'Em Phạm Minh Khang lớp 6/1 nộp 3kg sách báo cũ và 0.8kg vỏ lon nhôm.',
+  'Học sinh Trần Ngọc Hân lớp 8/3 mang đến 4kg chai nhựa PET và 1.2kg vỏ lon.',
+  'Bạn Lê Quốc Bảo lớp 9/4 nộp 12kg bìa carton.',
+  'Làm sao để phân loại vỏ hộp sữa và chai trà sữa đúng cách vậy Trạm Trưởng ơi?',
+];
+
+export const VINH_LONG_ECO_TIPS = [
+  {
+    title: 'Phân loại rác tại nguồn',
+    desc: 'Thu gom và phân loại rác giúp giảm thiểu ô nhiễm và hỗ trợ mô hình kinh tế tuần hoàn.',
+  },
+  {
+    title: 'Thu gom lon nhôm - Tiết kiệm 95% năng lượng',
+    desc: 'Nhôm tái chế không giới hạn số lần, giúp giảm phát thải khí nhà kính so với sản xuất nhôm mới.',
+  },
+  {
+    title: 'Giữ giấy khô ráo',
+    desc: 'Giấy sạch, không dính dầu mỡ sẽ giữ được sợi cellulose tốt nhất cho quá trình tái chế thành tập vở.',
+  },
+];
